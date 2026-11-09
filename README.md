@@ -1,65 +1,71 @@
-# Student_performance_analysis_prediction
-Students performance analysis and final grade prediction using python, data visualization, and linear regression.
 Student Performance Analysis and Prediction System
 
-1. Introduction
+1. Project Overview
 
-This project focuses on analysing student academic performance and predicting final mathematics grades using Python and machine learning techniques.
+The Student Performance Analysis and Prediction System is a minor project developed using Python and Machine Learning. The main aim of this project is to analyse students' academic performance and predict their final mathematics grades based on selected academic and personal factors.
 
-The project uses the Student Performance Dataset obtained from the UCI Machine Learning Repository.
+The project uses data analysis and Linear Regression to understand the relationship between different student-related factors and their final grades.
 
 2. Objectives
 
-- To analyse student academic performance.
-- To identify patterns and relationships in the dataset.
-- To perform Exploratory Data Analysis (EDA).
-- To build a machine learning model for grade prediction.
-- To evaluate the performance of the developed model.
+The main objectives of this project are:
+
+- To analyse students' academic performance using a dataset.
+- To identify factors that may influence students' final grades.
+- To perform data cleaning and exploratory data analysis.
+- To develop a Machine Learning model for grade prediction.
+- To evaluate the performance of the model using standard evaluation metrics.
 
 3. Dataset Description
 
+The project uses the Student Performance Dataset obtained from the UCI Machine Learning Repository.
+
 - Dataset: Student Performance (Mathematics)
-- Source: UCI Machine Learning Repository
-- Total Records: 395
-- Total Attributes: 33
-- Target Variable: G3 (Final Grade)
+- Number of Records: 395
+- Number of Attributes: 33
+- Target Variable: G3 (Final Mathematics Grade)
 
-4. Features Selected
+The selected features include:
 
-The following features were used:
-
-- Study time
-- Past failures
+- Study Time
+- Previous Failures
 - Absences
-- First-period grade (G1)
-- Second-period grade (G2)
+- First Period Grade (G1)
+- Second Period Grade (G2)
 - Age
 
-5. Tools and Technologies
+Original Dataset Source:
+https://archive.ics.uci.edu/dataset/320/student+performance
+
+4. Tools and Technologies Used
+
+The following tools and Python libraries were used:
 
 - Python
 - Google Colab
-- Pandas and NumPy
-- Matplotlib and Seaborn
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
 - Scikit-learn
 - Joblib
 
-6. Project Methodology
+5. Data Preprocessing
 
-1. Dataset collection and loading.
-2. Data inspection and cleaning.
-3. Exploratory Data Analysis.
-4. Data visualisation.
-5. Feature selection.
-6. Train-test splitting.
-7. Linear Regression model development.
-8. Model evaluation.
-9. Cross-validation and Ridge Regression comparison.
-10. Model saving and reloading.
+The dataset was examined and prepared before model development. The preprocessing steps included:
 
-7. Exploratory Data Analysis
+- Checking for missing values.
+- Checking and removing duplicate records.
+- Selecting relevant features for prediction.
+- Preparing the data for model training and testing.
 
-Five visualisations were created to understand the dataset:
+The cleaned dataset was also saved as a separate CSV file.
+
+6. Exploratory Data Analysis
+
+Exploratory Data Analysis (EDA) was performed to understand the distribution and relationships within the dataset.
+
+The following visualisations were created:
 
 - Histogram
 - Bar Chart
@@ -67,45 +73,84 @@ Five visualisations were created to understand the dataset:
 - Box Plot
 - Correlation Heatmap
 
-8. Model Performance
+These visualisations helped in understanding student grades and the relationship between the selected features.
 
-Linear Regression was used as the main prediction model.
+7. Machine Learning Model
+
+Linear Regression was used as the main Machine Learning algorithm to predict students' final mathematics grades.
+
+The dataset was divided into training and testing sets using an 80:20 ratio. The model was trained using the selected features, and its predictions were compared with the actual grades.
+
+Ridge Regression was also explored through hyperparameter tuning for comparison.
+
+8. Model Evaluation
+
+The Linear Regression model was evaluated using the following metrics:
 
 Evaluation Metric| Result
-MAE| 1.33
-RMSE| 2.11
-R² Score| 0.782
+Mean Absolute Error (MAE)| 1.33
+Root Mean Squared Error (RMSE)| 2.11
+R-squared (R²)| 0.782
 
-The model achieved a mean R² score of 0.819 through 5-fold cross-validation.
+Five-fold cross-validation was also performed, giving a mean R² score of 0.819.
 
-9. Model Tuning
+Ridge Regression was tested through hyperparameter tuning. Although it achieved a higher cross-validation score during tuning, its test-set R² score did not improve over Linear Regression.
 
-Ridge Regression was also tested using GridSearchCV. The best alpha value was 0.01, with a cross-validation R² score of 0.834.
+9. Results and Findings
 
-However, it did not improve the test-set R² score over Linear Regression.
+The model was able to identify relationships between the selected academic factors and students' final mathematics grades.
+
+The evaluation results indicate that the Linear Regression model performed reasonably well on the test dataset. The project also demonstrates how data analysis and Machine Learning can be used to study academic performance.
 
 10. Limitations
 
-The model uses a limited number of selected features. Student performance can also depend on several personal, social and educational factors that are not fully represented in the dataset.
+- The project uses only the mathematics dataset.
+- The predictions are based on the selected features.
+- Student performance may depend on several other factors that are not included in the dataset.
+- The model provides estimates and cannot guarantee exact future grades.
 
-11. Conclusion
+11. Installation and Execution
 
-This project demonstrates how data analysis and machine learning can be used to study student academic performance and estimate final grades. The results show the usefulness of Linear Regression for this dataset.
+Requirements
+
+Python 3.x is required to run the project.
+
+Install Required Libraries
+
+Run the following command:
+
+pip install -r requirements.txt
+
+Running the Project
+
+1. Download or clone this repository.
+2. Open "Student_Performance_Analysis.ipynb" in Google Colab or Jupyter Notebook.
+3. Upload the original "student-mat.csv" dataset if it is not already available in the notebook environment.
+4. Run the notebook cells in sequence.
+5. View the data analysis, visualisations, model predictions and evaluation results.
 
 12. Repository Contents
 
-- "cleaned_student_data.csv" – Cleaned dataset
-- PNG files – Data visualisation graphs
-- "linear_regression_model.pkl" – Saved prediction model
-- "model_features.pkl" – Saved feature information
-- Project report – Detailed documentation
+The repository includes:
 
-13. References
+- Python Jupyter Notebook containing the project source code.
+- Original Student Performance dataset.
+- Cleaned dataset.
+- Data visualisation graphs.
+- Saved Linear Regression model.
+- Model feature information.
+- Project report in PDF format.
+- "requirements.txt" containing the required Python libraries.
 
-UCI Machine Learning Repository:
+13. Conclusion
 
-https://archive.ics.uci.edu/dataset/320/student+performance
+This project provided practical experience in data preprocessing, exploratory data analysis and Machine Learning. It helped in understanding how academic data can be analysed and used to predict student performance.
 
-Author
+The project also provided an opportunity to work with Python libraries and evaluate a predictive model using different performance metrics.
 
-Divyanshi Rathore
+14. Author
+
+Name: Divyanshi Rathore
+Project: Student Performance Analysis and Prediction System
+Program: AI/ML with Python Training Program
+Batch: September 2026
